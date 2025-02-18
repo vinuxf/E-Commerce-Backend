@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Quotation Request #<%= quotationId %></title>
+</head>
+<body>
+  <h1>New Quotation Request</h1>
+  <p><strong>Customer Name:</strong> <%= customerName %></p>
+  <p><strong>Customer Email:</strong> <%= customerEmail %></p>
+  <p><strong>Quotation ID:</strong> <%= quotationId %></p>
+  <p><strong>Quoted Items:</strong></p>
+  <table>
+    <tr><th>Item</th><th>Price</th></tr>
+    <% quotedItems.forEach(item => { %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+      </tr>
+    <% }) %>
+  </table>
+  <p><strong>Total: <%= totalAmount %></strong></p>
+</body>
+</html>

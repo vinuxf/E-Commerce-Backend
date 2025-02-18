@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Placed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #2a2a2a;
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #008cff;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+      background-color: #333;
+    }
+
+    .content h2 {
+      color: #008cff;
+      margin-bottom: 10px;
+    }
+
+    .order-info {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .order-info p {
+      margin: 5px 0;
+      color: #bbb;
+    }
+
+    .table-container {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #444;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #555;
+    }
+
+    th {
+      background-color: #555;
+      color: #ddd;
+    }
+
+    td {
+      color: #ccc;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Your order is</h1>
+    </div>
+    <div class="content" style="color: white">
+      <p style="color: white">Hi <%= name %>,</p>
+      <p style="color: white">
+        Your order <strong>#<%= item_id %></strong> has been placed!
+      </p>
+      <p style="color: white">We will deliver Your as soon as possible</p>
+
+      <div class="order-info">
+        <h2>Order Details</h2>
+        <p><strong>Order #: </strong>
+          <%= item_id %>
+        </p>
+        <p><strong>Order Date: </strong>
+          <%= orderDate %>
+        </p>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% orderItems.forEach(item=> { %>
+              <tr>
+                <td>
+                  <%= item.productName %>
+                </td>
+                <td>
+                  <%= item.Quantity %>
+                </td>
+                <td><span>
+                    <%= currency %>
+                  </span>
+                  <%= item.price %>
+                </td>
+              </tr>
+              <% }); %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="order-info">
+        <p><strong>Subtotal:</strong> <span>
+            <%= currency %>
+          </span>
+          <%= subtotal %>
+        </p>
+        <% if (Discount) { %>
+          <p><strong>Discount:</strong> -<span>
+              <%= currency %>
+            </span>
+            <%= Discount %>
+          </p>
+          <% } %>
+            <p><strong>Total:</strong> <span>
+                <%= currency %>
+              </span>
+              <%= total %>
+            </p>
+      </div>
+    </div>
+    <div class="footer">
+      <p style="color: white">
+        To continue receiving these emails, please add our email to your
+        contacts or whitelist us.
+      </p>
+      <p style="color: white">
+        Grocery's Direct, 412 Boulevard Harwood, Suite 208, Dorion,
+        Quebec, J7V 7H4
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

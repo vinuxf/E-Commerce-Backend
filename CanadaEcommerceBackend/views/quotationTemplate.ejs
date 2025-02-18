@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotation #<%= quotationId %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #2a2a2a;
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #008cff;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+      background-color: #333;
+    }
+
+    .content h2 {
+      color: #008cff;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .info p {
+      margin: 5px 0;
+      color: #bbb;
+    }
+
+    .table-container {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #444;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #555;
+    }
+
+    th {
+      background-color: #555;
+      color: #ddd;
+    }
+
+    td {
+      color: #ccc;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Quotation #<%= quotationId %></h1>
+    </div>
+    <div class="content">
+      <p>Dear <%= customerName %>,</p>
+      <p>Thank you for requesting a quotation. Here are the details of your quotation:</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% quotedItems.forEach(item => { %>
+              <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info">
+        <p><strong>Total: </strong><%= totalAmount %></p>
+        <p><strong>Quotation Validity: </strong><%= validityPeriod %></p>
+        <p><strong>Notes: </strong><%= notes %></p>
+      </div>
+
+      <p>If you have any questions, feel free to contact us.</p>
+    </div>
+    <div class="footer">
+      <p>To continue receiving these emails, please add our email to your contacts or whitelist us.</p>
+      <p>Grocery's Direct, 412 Boulevard Harwood, Suite 208, Dorion, Quebec, J7V 7H4</p>
+    </div>
+  </div>
+</body>
+</html>

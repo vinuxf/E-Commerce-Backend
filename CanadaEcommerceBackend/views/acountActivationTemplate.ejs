@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activate Your Account</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #2a2a2a;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+      }
+      .header {
+        text-align: center;
+        background-color: #008cff;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: white;
+      }
+      .content {
+        padding: 20px;
+        background-color: #333;
+      }
+      .content h2 {
+        color: #008cff;
+        margin-bottom: 10px;
+      }
+      .message {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #444;
+        border-radius: 5px;
+      }
+      .message p {
+        margin: 5px 0;
+        color: #bbb;
+      }
+      .activation-info {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #444;
+        border-radius: 5px;
+      }
+      .activation-info p {
+        color: #ccc;
+        margin: 5px 0;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #bbb;
+      }
+      .activateButton {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .activateButton a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #008cff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .activateButton a:hover {
+        background-color: #005fa3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Activate Your Account</h1>
+      </div>
+      <div class="content" style="color: white">
+        <p style="color: white">Hello <%= name %>,</p>
+        <p style="color: white">
+          Congratulations! Your account with
+          <strong>Grocery's Direct</strong> has been successfully approved. To
+          activate your account and start using our services, please click the
+          "Activate" button below.
+        </p>
+        <div class="message">
+          <h2>Welcome to Grocery's Direct!</h2>
+          <p>
+          
+            We are excited to have you on board. Your journey to a better
+            shopping experience starts now. If you have any questions, feel free
+            to reach out to our support team.
+          </p>
+        </div>
+        <div class="activateButton">
+          <a
+            href="https://grocerysdirect.com/<%= encryptedID %>"
+            style="
+              background-color: #02d622;
+              padding: 10px 20px;
+              color: white;
+              text-decoration: none;
+              border-radius: 5px;
+            "
+          >
+            Activate My Account
+          </a>
+        </div>
+        <div class="activation-info">
+          <p><strong>Username:</strong> <%= email %></p>
+          <p><strong>Approval Date & Time:</strong> <%= activationDate %></p>
+        </div>
+      </div>
+      <div class="footer">
+        <p style="color: white">
+          Please add our email to your contacts to ensure you don't miss out on
+          important updates.
+        </p>
+        <p style="color: white">
+          Grocery's Direct, 412 Boulevard Harwood, Suite 208, Dorion,
+          Quebec, J7V 7H4
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

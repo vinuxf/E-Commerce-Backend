@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Customer Registration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #2a2a2a;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+      }
+      .header {
+        text-align: center;
+        background-color: #008cff;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: white;
+      }
+      .content {
+        padding: 20px;
+        background-color: #333;
+      }
+      .content h2 {
+        color: #ff5e00;
+        margin-bottom: 10px;
+      }
+      .user-info {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #444;
+        border-radius: 5px;
+      }
+      .user-info p {
+        margin: 5px 0;
+        color: #bbb;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>New Customer Registered</h1>
+      </div>
+      <div class="content">
+        <p>Hi Admin,</p>
+        <p>
+          A new customer has just registered in the system. Here are the details:
+        </p>
+        <div class="user-info">
+          <p><strong>Name:</strong> <%= name %></p>
+          <p><strong>Email:</strong> <%= email %></p>
+          <p><strong>Registration Date:</strong> <%= registrationDate %></p>
+        </div>
+        <p>Please verify and follow up if necessary.</p>
+      </div>
+      <div class="footer">
+        <p>Thank you for using our system!</p>
+      </div>
+    </div>
+  </body>
+</html>
